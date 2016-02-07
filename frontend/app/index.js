@@ -8,11 +8,7 @@ var App = React.createClass({
     var areas = data.areas.map(function(area) {
       area.data = $.parseJSON(area.data);
 
-      if (area.data && area.data.outerPolygon) {
-        area.visible = true;
-      } else {
-        area.visible = false;
-      }
+      area.visible = area.data && area.data.outerPolygon);
     })
 
     this.setState({ areas: data.areas });
